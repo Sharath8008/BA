@@ -70,7 +70,7 @@ with placeholder.container():
         st.pyplot(fig)
 
     with fig_col2:
-        st.markdown("### Second Chart")
+        st.markdown("### Platform Based")
         fig2 = plt.figure(figsize=(4, 3))
         plt.pie(plat_val, labels=index, autopct='%1.2f%%')
         st.write(fig2)
@@ -84,6 +84,8 @@ with placeholder.container():
         st.dataframe(final_df1)
     # time.sleep(1)
     # Create a form to collect user feedback
+
+    st.markdown("### Feedback form")
     feedback_form = st.form(key='feedback_form')
     name = st.text_input('Name')
     email = st.text_input('Email')
