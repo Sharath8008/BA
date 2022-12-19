@@ -11,6 +11,8 @@ final_df = pd.read_csv("output.csv")
 
 ## fill na with delhi
 final_df["State"] = final_df["State"].fillna("Delhi")
+final_df["Days"] = final_df['Days'].fillna("2")
+final_df = final_df.rename(columns={'Days': 'Days Posted Back'})
 
 ## Replace the strings
 index1 = final_df['Platform'].value_counts().index
@@ -28,10 +30,10 @@ st.set_page_config(
 )
 
 # dashboard title
-st.title("Business Analyst Jobs  Dashboard")
+st.title("Business Analyst Jobs Analytics Basic Dashboard")
 st.markdown("###### This below results displayed based on live data taken from Google Jobs API and captured data from (16/11/2022) to (18/12/2022)")
-st.markdown("###### Tech Stack used with Request API, Python and its libraries, AWS RDS and SQL Server for storing data, Streamlit, Render for deployment")
-st.markdown("###### As I am still in early stages and rather than kaggle set, I am trying to fetch real time data and learning by doing.")
+st.markdown("###### Tech Stack used with Request API, Python and its libraries, AWS RDS and SQL Server for storing data, Git and Github for version control, Streamlit, Render and streamlit cloud for deployments")
+st.markdown("###### As I am still in early stages of learning, I preferred trying to fetch real time data instead of kaggle and trying to learn by doing.")
 st.markdown("###### I am planning to add more features like analysing salaries, years of exp by using NLP. But need to start learning NLP. Please share your feedback")
 
 # # top-level filters
@@ -47,7 +49,7 @@ index = final_df1['Platform'].value_counts().index
 plat_val = final_df1['Platform'].value_counts().values
 
 # creating KPIs
-Number_of_Jobs = final_df1.groupby(['State', 'Platform', 'Days']).size().sum()
+Number_of_Jobs = final_df1.groupby(['State', 'Platform', 'Days Posted Back']).size().sum()
 
 with placeholder.container():
     # create one column
