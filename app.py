@@ -31,10 +31,11 @@ st.set_page_config(
 
 # dashboard title
 st.title("Business Analyst Jobs Analytics Basic Dashboard")
-st.markdown("###### This below results displayed based on live data taken from Google Jobs API and captured data from (16/11/2022) to (18/12/2022)")
-st.markdown("###### Tech Stack used with Request API, Python and its libraries, AWS RDS and SQL Server for storing data, Git and Github for version control, Streamlit, Render and streamlit cloud for deployments")
+st.markdown("###### This below results displayed based on live data fetched from Google Jobs API and captured data from (16/11/2022) to (18/12/2022)")
+st.markdown("###### Tech Stack used: Google Jobs API, Python and libraries, AWS RDS and SQL Server for storing data, Git and Github for version control, Streamlit and Render for Web app and for deployments")
+st.markdown("##### About mywork")
 st.markdown("###### As I am still in early stages of learning, I preferred trying to fetch real time data instead of kaggle and trying to learn by doing.")
-st.markdown("###### I am planning to add more features like analysing salaries, years of exp by using NLP. But need to start learning NLP. Please share your feedback")
+st.markdown("###### I am planning to add more features like analyzing salaries, years of exp by using NLP. But need to start learning NLP.")
 
 # # top-level filters
 job_filter = st.selectbox("Select the Job Title", pd.unique(final_df['Title']))
